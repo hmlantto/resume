@@ -1,4 +1,4 @@
-/* GENERAL */
+/* YLEISET */
 
 * {
   margin: 0;
@@ -8,74 +8,98 @@
 body {
   max-width: 50rem;
   margin: 0 auto;
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #555;
   line-height: 1.5;
   padding: 4rem 1rem;
 }
 
-/* GRID */
+/* ELEMENTTIEN MUOTOILU */
+
+h1, h2, h3, h4 {
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 500;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3 {
+  font-style: italic;
+}
+
+/* GRIDIN MUOTOILU */
 
 .main-grid {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.main-grid-item {
-  padding: 1rem;
-  /* padding-right: 1rem; */
-  border-top: 1px solid #000;
+.main-grid-row {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #aaa;
 }
 
-.main-grid-item:nth-child(1) {
+.main-grid-row:nth-child(1) {
   border: 0;
 }
 
-.sub-grid {
+.row-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
-.sub-grid-item {
-
+.row-grid-item {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.sub-sub-grid {
+.content-area {
+  padding-left: 1rem;
+}
+
+.skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
-.sub-sub-grid-item {
+.skills-item {
+  padding-top: 0.1rem;
+  padding-bottom: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.technical-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.technical-item {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
-  padding-right: 1rem;
+  margin-right: 1rem;
+  border-bottom: 1px solid #ccc;
 }
 
-.technical-grid-item {
-  border-top: 1px solid #000;
-}
-
-.technical-grid-item:nth-child(1),
-.technical-grid-item:nth-child(2),
-.technical-grid-item:nth-child(3) {
+.technical-item:nth-last-child(1),
+.technical-item:nth-last-child(2) {
   border: 0;
 }
-
-.grid-item-span-3 {
-  grid-column-end: span 3;
-}
-
-.grid-item-span-4 {
-  grid-column-end: span 4;
-}
-
-/* HEADER */
 
 .contact {
   display: flex;
   align-items: center;
 }
-
-/* EXPERIENCE SECTION */
 
 .employment-header {
   margin-bottom: 1rem;
@@ -88,4 +112,36 @@ body {
 .employment-dates {
   float: right;
   margin-right: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .row-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .technical-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .technical-item:nth-last-child(3) {
+    border: 0;
+  }
+
+  .grid-item-span-3 {
+    grid-column-end: span 3;
+  }
+  
+  .grid-item-span-4 {
+    grid-column-end: span 4;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
